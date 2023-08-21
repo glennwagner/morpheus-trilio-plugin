@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"global.js",
+"lineCount":2,
+"mappings":"A;AAAA,IAAIA,QAAUA,OAAVA,EAAqB,CAACC,IAAK,CAACC,SAAU,aAAX,CAAN,CACzBC,MAAA,CAAM,iCAAN,CACAC,EAAA,CAAE,QAAQ,EAAG,CACkB,iBAA9B,GAAGA,CAAA,CAAE,MAAF,CAAA,CAAUC,IAAV,CAAe,MAAf,CAAH,EACCF,KAAA,CAAM,+BAAN,CAFW,CAAb;",
+"sources":["global.unminified.js"],
+"names":["process","env","NODE_ENV","alert","$","data"]
+}
