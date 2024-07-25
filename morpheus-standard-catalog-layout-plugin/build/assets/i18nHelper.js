@@ -1,2 +1,0 @@
-//# sourceMappingURL=i18nHelper.js.map
-var process=process||{env:{NODE_ENV:"development"}};HandlebarsCustom.registerHelper("i18n",function(b,a,c){void 0===a&&(a=[]);Array.isArray(a)||(a=[a]);return $L({code:b,params:a,default:c})});
