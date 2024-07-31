@@ -88,7 +88,7 @@ class CustomReportProvider extends AbstractReportProvider {
 
 
 	void process(ReportResult reportResult) {
-		morpheus.report.updateReportResultStatus(reportResult,ReportResult.Status.generating).blockingGet();
+		morpheus.async.report.updateReportResultStatus(reportResult,ReportResult.Status.generating).blockingAwait()
 		Long displayOrder = 0
 		List<GroovyRowResult> results = []
 		withDbConnection { Connection dbConnection ->
@@ -109,11 +109,11 @@ class CustomReportProvider extends AbstractReportProvider {
 			log.info("resultRowRecord: ${resultRowRecord.dump()}")
 			return resultRowRecord
 		}.buffer(50).doOnComplete {
-			morpheus.report.updateReportResultStatus(reportResult,ReportResult.Status.ready).blockingGet();
+			morpheus.async.report.updateReportResultStatus(reportResult,ReportResult.Status.ready).blockingAwait();
 		}.doOnError { Throwable t ->
-			morpheus.report.updateReportResultStatus(reportResult,ReportResult.Status.failed).blockingGet();
+			morpheus.async.report.updateReportResultStatus(reportResult,ReportResult.Status.failed).blockingAwait();
 		}.subscribe {resultRows ->
-			morpheus.report.appendResultRows(reportResult,resultRows).blockingGet()
+			morpheus.async.report.appendResultRows(reportResult,resultRows).blockingGet()
 		}
 
 	}
