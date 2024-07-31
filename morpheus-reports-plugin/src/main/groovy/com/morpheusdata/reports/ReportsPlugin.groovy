@@ -15,7 +15,9 @@ class ReportsPlugin extends Plugin {
 	@Override
 	void initialize() {
 		CustomReportProvider customReportProvider = new CustomReportProvider(this, morpheus)
+		CustomAnalyticsProvider customAnalyticsProvider = new CustomAnalyticsProvider(this, morpheus)
 		this.pluginProviders.put(customReportProvider.code, customReportProvider)
+		this.pluginProviders.put(customAnalyticsProvider.code, customAnalyticsProvider)
 		this.setName("Custom Reports")
 		
 	}

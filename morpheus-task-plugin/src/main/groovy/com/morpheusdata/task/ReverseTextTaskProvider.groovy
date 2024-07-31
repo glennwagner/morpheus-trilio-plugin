@@ -2,9 +2,14 @@ package com.morpheusdata.task
 
 import com.morpheusdata.core.*
 import com.morpheusdata.core.providers.TaskProvider
+import com.morpheusdata.model.ComputeServer
 import com.morpheusdata.model.Icon
+import com.morpheusdata.model.Instance
 import com.morpheusdata.model.OptionType
+import com.morpheusdata.model.Task
+import com.morpheusdata.model.TaskResult
 import com.morpheusdata.model.TaskType
+import com.morpheusdata.model.Workload
 
 /**
  * Example TaskProvider
@@ -111,5 +116,41 @@ class ReverseTextTaskProvider implements TaskProvider {
 	@Override
 	Icon getIcon() {
 		return new Icon(path:"reverseText.png", darkPath: "reverseText.png")
+	}
+
+	@Override
+	TaskResult executeLocalTask(Task task, Map map, Workload workload, ComputeServer computeServer, Instance instance) {
+		return null
+
+	}
+
+	@Override
+	TaskResult executeServerTask(ComputeServer computeServer, Task task, Map map) {
+		return null
+	}
+
+	@Override
+	TaskResult executeServerTask(ComputeServer computeServer, Task task) {
+		return null
+	}
+
+	@Override
+	TaskResult executeContainerTask(Workload workload, Task task, Map map) {
+		return null
+	}
+
+	@Override
+	TaskResult executeContainerTask(Workload workload, Task task) {
+		return null
+	}
+
+	@Override
+	TaskResult executeRemoteTask(Task task, Map map, Workload workload, ComputeServer computeServer, Instance instance) {
+		return null
+	}
+
+	@Override
+	TaskResult executeRemoteTask(Task task, Workload workload, ComputeServer computeServer, Instance instance) {
+		return null
 	}
 }

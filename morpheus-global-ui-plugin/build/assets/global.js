@@ -1,2 +1,0 @@
-//# sourceMappingURL=global.js.map
-var process=process||{env:{NODE_ENV:"development"}};alert("hello from the Global UI Plugin");$(function(){"instances/index"===$("body").data("page")&&alert("Hello from the instances page")});

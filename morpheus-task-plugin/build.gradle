@@ -1,9 +1,9 @@
 plugins {
-	id "com.bertramlabs.asset-pipeline" version "3.3.2"
+	id "com.bertramlabs.asset-pipeline" version "4.5.1"
 }
 
 apply plugin: 'com.github.johnrengelman.shadow'
-apply plugin: 'java'
+
 apply plugin: 'groovy'
 apply plugin: 'idea'
 apply plugin: 'maven-publish'
