@@ -99,7 +99,6 @@ class ReverseTextTaskProvider implements TaskProvider {
 				name: 'reverseText',
 				code: 'reverseTextTaskText',
 				fieldName: 'reversibleText',
-				optionSource: true,
 				displayOrder: 0,
 				fieldLabel: 'Text to Reverse',
 				required: true,
