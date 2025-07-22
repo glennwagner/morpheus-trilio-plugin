@@ -1,0 +1,58 @@
+{{!-- instanceTab.hbs --}}
+<div class="cloud-backups-tab">
+
+  {{!-- load the libraries from CDN before your own script --}}
+  <link   href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+
+  <h3>Cloud Backups</h3>
+  <button id="createSnapshotBtn" class="btn btn-sm btn-primary">
+    Create Snapshot
+  </button>
+
+  <table id="snapshotsTable" class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th>Created At</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Backup Type</th>
+        <th>Size</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each snapshots}}
+      <tr>
+        <td>{{this.created_at}}</td>
+        <td>{{this.name}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.status}}</td>
+        <td>{{this.snapshot_type}}</td>
+        <td>{{this.size}}</td>
+        <td>
+          <button class="restoreSnapshotBtn btn btn-sm btn-warning"
+                  data-id="{{this.id}}">
+            Restore
+          </button>
+          <button class="deleteSnapshotBtn btn btn-sm btn-danger ml-1"
+                  data-id="{{this.id}}">
+            Delete
+          </button>
+        </td>
+      </tr>
+      {{/each}}
+      {{#unless snapshots}}
+      <tr>
+        <td colspan="7" class="text-center">No snapshots found.</td>
+      </tr>
+      {{/unless}}
+    </tbody>
+  </table>
+</div>
+
+<script src="/assets/js/instanceTab.js"></script>
+

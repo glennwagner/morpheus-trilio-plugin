@@ -1,0 +1,29 @@
+{
+  "code":"morpheus-tab-plugin",
+  "name":"Cloud Backups",
+  "version":"1.0.0",
+  "settings":[
+    {
+      "name":"Proxy Endpoint URL",
+      "code":"customTab-plugin-proxy-url",
+      "fieldContext":"config",
+      "fieldName":"proxyUrl",
+      "fieldLabel":"Proxy Endpoint URL",
+      "helpText":"The URL that the custom tab iframe will load (proxied)",
+      "required":true,
+      "displayOrder":1,
+      "inputType":"TEXT"
+    }
+  ],
+  "menus":[
+    {
+      "code":"proxyDashboard",
+      "name":"Proxy Dashboard",
+      "href":"/plugin/customTab/proxy",
+      "icon":"fa fa-external-link-alt",
+      "target":"_blank",
+      "order":100
+    }
+  ]
+}
+
